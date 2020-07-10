@@ -27,17 +27,36 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)NavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
-	<ItemGroup>
-		<Content Include="$(MSBuildThisFileDirectory)Assets\LockScreenLogo.scale-200.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\SplashScreen.scale-200.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\Square150x150Logo.scale-200.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\Square44x44Logo.scale-200.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\StoreLogo.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\Wide310x150Logo.scale-200.png" />
-	</ItemGroup>
-	<ItemGroup>
-		<PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
-	</ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\BottomBarIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ButtonIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\CardsIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\CheckboxIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ColorsIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ComboBoxIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\FabIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\NavigationViewIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\PasswordBoxIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\RadioButtonIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\SliderIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\SnackBarIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\SplashScreen.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\StoreLogo.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\TextBlockIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\TextBoxIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\ToggleSwitchIcon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
+  </ItemGroup>
 </Project>
