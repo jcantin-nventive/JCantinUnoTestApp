@@ -15,7 +15,8 @@
 		</ResourceDictionary>
 	</Page.Resources>
 
-	<NavigationView x:Name="NavigationView">
+	<NavigationView x:Name="NavigationView"
+					IsBackButtonVisible="Collapsed">
 		<NavigationView.MenuItems>
 			<NavigationViewItem Content="BottomBarIcon">
 				<NavigationViewItem.Icon>
