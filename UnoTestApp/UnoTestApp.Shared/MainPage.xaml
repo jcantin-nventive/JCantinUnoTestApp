@@ -7,27 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-	<Page.Resources>
+	<!--<Page.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceDictionary Source="ms-appx:///NavigationView.xaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
-	</Page.Resources>
+	</Page.Resources>-->
 
-	<NavigationView x:Name="NavigationView"
-					IsBackButtonVisible="Collapsed">
-		<NavigationView.MenuItems>
-			<NavigationViewItem Content="BottomBarIcon">
-				<NavigationViewItem.Icon>
-					<BitmapIcon UriSource="ms-appx:///Assets/BottomBarIcon.png"/>
-				</NavigationViewItem.Icon>
-			</NavigationViewItem>
-			<NavigationViewItem Content="FabIcon">
-				<NavigationViewItem.Icon>
-					<BitmapIcon UriSource="ms-appx:///Assets/FabIcon.png" />
-				</NavigationViewItem.Icon>
-			</NavigationViewItem>
-		</NavigationView.MenuItems>
-	</NavigationView>
+	<ProgressBar IsIndeterminate="True" />
 </Page>
