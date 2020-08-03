@@ -16,11 +16,5 @@ namespace UnoTestApp
 
 		public static readonly DependencyProperty SampleTemplateProperty =
 			DependencyProperty.Register("SampleTemplate", typeof(DataTemplate), typeof(SampleControl), new PropertyMetadata(null));
-
-		protected override void OnApplyTemplate()
-		{
-			base.OnApplyTemplate();
-			VisualStateManager.GoToState(this, "DisplayContent", false);
-		}
 	}
 }

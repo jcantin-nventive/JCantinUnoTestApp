@@ -12,25 +12,11 @@
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate>
-						<Grid x:Name="ContentGrid"
-							  Visibility="Collapsed">
+						<Grid>
 							<ScrollViewer>
 								<ContentPresenter ContentTemplate="{Binding SampleTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
 							</ScrollViewer>
-							
-							<VisualStateManager.VisualStateGroups>
-								<VisualStateGroup x:Name="Standard">
-									<VisualState x:Name="Default" />
-									<VisualState x:Name="DisplayContent">
-										<VisualState.Setters>
-											<Setter Target="ContentGrid.Visibility"
-													Value="Visible" />
-										</VisualState.Setters>
-									</VisualState>
-								</VisualStateGroup>
-							</VisualStateManager.VisualStateGroups>
 						</Grid>
-
 					</ControlTemplate>
 				</Setter.Value>
 			</Setter>
