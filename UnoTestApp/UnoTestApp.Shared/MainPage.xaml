@@ -7,7 +7,43 @@
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	  mc:Ignorable="d">
 
+	<Page.Resources>
+		<Style TargetType="local:SampleControl">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate>
+						<Grid x:Name="ContentGrid"
+							  Visibility="Collapsed">
+							<ScrollViewer>
+								<ContentPresenter ContentTemplate="{Binding SampleTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+							</ScrollViewer>
+							
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="Standard">
+									<VisualState x:Name="Default" />
+									<VisualState x:Name="DisplayContent">
+										<VisualState.Setters>
+											<Setter Target="ContentGrid.Visibility"
+													Value="Visible" />
+										</VisualState.Setters>
+									</VisualState>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+						</Grid>
+
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Page.Resources>
+
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<ToggleSwitch />
+		<local:SampleControl>
+			<local:SampleControl.SampleTemplate>
+				<DataTemplate>
+					<CheckBox IsChecked="True" />
+				</DataTemplate>
+			</local:SampleControl.SampleTemplate>
+		</local:SampleControl>
 	</Grid>
 </Page>
