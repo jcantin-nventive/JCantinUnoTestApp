@@ -7,15 +7,10 @@
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	  mc:Ignorable="d">
 
-	<Page.Resources>
-		<ResourceDictionary>
-			<ResourceDictionary.MergedDictionaries>
-				<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-			</ResourceDictionary.MergedDictionaries>
-		</ResourceDictionary>
-	</Page.Resources>
-
-	<Grid>
-		<ToggleSwitch IsOn="True" />
-	</Grid>
+	<NavigationView x:Name="NavView"
+					Style="{StaticResource NavViewStyle}"
+					CompactPaneLength="0"
+					ExpandedModeThresholdWidth="600"
+					CompactModeThresholdWidth="100000"
+					IsPaneOpen="False" />
 </Page>
