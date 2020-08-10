@@ -7,29 +7,7 @@
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	  mc:Ignorable="d">
 
-	<Page.Resources>
-		<Style TargetType="local:SampleControl">
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate>
-						<Grid>
-							<ScrollViewer>
-								<ContentPresenter ContentTemplate="{Binding SampleTemplate, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
-							</ScrollViewer>
-						</Grid>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-	</Page.Resources>
-
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<local:SampleControl>
-			<local:SampleControl.SampleTemplate>
-				<DataTemplate>
-					<CheckBox IsChecked="True" />
-				</DataTemplate>
-			</local:SampleControl.SampleTemplate>
-		</local:SampleControl>
+		<Image Source="ms-appx:///Assets/banner-light.png" />
 	</Grid>
 </Page>
