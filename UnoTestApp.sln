@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UnoTestApp.Shared", "UnoTestApp\UnoTestApp.Shared\UnoTestApp.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
 EndProject
@@ -11,11 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoTestApp.iOS", "UnoTestAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoTestApp.UWP", "UnoTestApp\UnoTestApp.UWP\UnoTestApp.UWP.csproj", "{36E608A9-0B6A-46B7-ADF1-C3187769DAD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoTestApp.Wasm", "UnoTestApp\UnoTestApp.Wasm\UnoTestApp.Wasm.csproj", "{6D6109FB-3D18-4518-A390-44D015FB6841}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnoTestApp.Wasm", "UnoTestApp\UnoTestApp.Wasm\UnoTestApp.Wasm.csproj", "{6D6109FB-3D18-4518-A390-44D015FB6841}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		UnoTestApp\UnoTestApp.Shared\UnoTestApp.Shared.projitems*{36e608a9-0b6a-46b7-adf1-c3187769dad9}*SharedItemsImports = 4
 		UnoTestApp\UnoTestApp.Shared\UnoTestApp.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		UnoTestApp\UnoTestApp.Shared\UnoTestApp.Shared.projitems*{db97379e-a31e-4663-99b2-1873b7102199}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
