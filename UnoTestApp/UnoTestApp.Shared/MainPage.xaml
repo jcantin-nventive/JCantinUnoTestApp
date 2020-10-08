@@ -7,7 +7,32 @@
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	  mc:Ignorable="d">
 
-	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<Image Source="ms-appx:///Assets/banner-light.png" />
+	<Page.Resources>
+		<Style TargetType="Button"
+			   x:Key="ProgressRingButton">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Border x:Name="RootBorder"
+								CornerRadius="8">
+							<ProgressRing x:Name="StatusRing"
+										  IsActive="True"
+										  Foreground="Black"
+										  Visibility="Visible"
+										  HorizontalAlignment="Center"
+										  VerticalAlignment="Center"
+										  Width="24"
+										  Height="24" />
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Page.Resources>
+
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+		  Padding="60">
+		<Button Style="{StaticResource ProgressRingButton}"
+				IsEnabled="False"/>
 	</Grid>
 </Page>
