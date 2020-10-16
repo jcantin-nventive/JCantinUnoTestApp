@@ -2,21 +2,106 @@
 	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	  xmlns:local="using:UnoTestApp"
-	  xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+	  xmlns:b="using:UnoTestApp.Behaviors"
 	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	  mc:Ignorable="d">
 
-	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-		  Padding="60">
-		<ProgressRing x:Name="StatusRing"
-					  IsActive="True"
-					  IsEnabled="False"
-					  Foreground="Black"
-					  Visibility="Visible"
-					  HorizontalAlignment="Center"
-					  VerticalAlignment="Center"
-					  Width="24"
-					  Height="24" />
+	<Page.DataContext>
+		<local:ViewModel />
+	</Page.DataContext>
+
+	<Page.Resources>
+
+		<local:ZeroToCustomConverter x:Key="ZeroToTransparent"
+									 ZeroValue="Transparent"
+									 NonZeroValue="White" />
+
+		<local:ZeroToCustomConverter x:Key="ZeroToZero"
+									 ZeroValue="0"
+									 NonZeroValue="1" />
+	</Page.Resources>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<ScrollViewer Grid.RowSpan="2"
+					  b:ScrollViewerRelativeOffsetBehavior.IsEnabled="True"
+					  b:ScrollViewerRelativeOffsetBehavior.RelativeOffset="{Binding RelativeOffset, Mode=TwoWay}">
+			<TextBlock FontSize="40"
+					   Margin="0,40,0,0">
+				<Run Text="Text 1" />
+				<LineBreak />
+				<Run Text="Text 2" />
+				<LineBreak />
+				<Run Text="Text 3" />
+				<LineBreak />
+				<Run Text="Text 4" />
+				<LineBreak />
+				<Run Text="Text 5" />
+				<LineBreak />
+				<Run Text="Text 6" />
+				<LineBreak />
+				<Run Text="Text 7" />
+				<LineBreak />
+				<Run Text="Text 8" />
+				<LineBreak />
+				<Run Text="Text 9" />
+				<LineBreak />
+				<Run Text="Text 10" />
+				<LineBreak />
+				<Run Text="Text 11" />
+				<LineBreak />
+				<Run Text="Text 12" />
+				<LineBreak />
+				<Run Text="Text 13" />
+				<LineBreak />
+				<Run Text="Text 14" />
+				<LineBreak />
+				<Run Text="Text 15" />
+				<LineBreak />
+				<Run Text="Text 16" />
+				<LineBreak />
+				<Run Text="Text 17" />
+				<LineBreak />
+				<Run Text="Text 19" />
+				<LineBreak />
+				<Run Text="Text 20" />
+				<LineBreak />
+				<Run Text="Text 21" />
+				<LineBreak />
+				<Run Text="Text 22" />
+				<LineBreak />
+				<Run Text="Text 23" />
+				<LineBreak />
+				<Run Text="Text 24" />
+				<LineBreak />
+				<Run Text="Text 25" />
+				<LineBreak />
+				<Run Text="Text 26" />
+				<LineBreak />
+				<Run Text="Text 27" />
+				<LineBreak />
+				<Run Text="Text 28" />
+				<LineBreak />
+				<Run Text="Text 29" />
+				<LineBreak />
+				<Run Text="Text 30" />
+			</TextBlock>
+		</ScrollViewer>
+
+		<Border Background="White"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				Opacity="{Binding RelativeOffset, Converter={StaticResource ZeroToZero}, FallbackValue=0}"
+				x:Name="HidingBorder"/>
+
+		<CommandBar Content="This is the title"
+					Background="{Binding RelativeOffset, Converter={StaticResource ZeroToTransparent}, FallbackValue=Transparent}"
+					x:Name="MyCommandBar"
+					Height="80" />
 	</Grid>
 </Page>
