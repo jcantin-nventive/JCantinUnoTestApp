@@ -17,6 +17,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		UnoTestApp\UnoTestApp.Shared\UnoTestApp.Shared.projitems*{36e608a9-0b6a-46b7-adf1-c3187769dad9}*SharedItemsImports = 4
 		UnoTestApp\UnoTestApp.Shared\UnoTestApp.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		UnoTestApp\UnoTestApp.Shared\UnoTestApp.Shared.projitems*{6d6109fb-3d18-4518-a390-44d015fb6841}*SharedItemsImports = 5
 		UnoTestApp\UnoTestApp.Shared\UnoTestApp.Shared.projitems*{871ec7a2-efef-421e-a712-8df316f5825a}*SharedItemsImports = 4
 		UnoTestApp\UnoTestApp.Shared\UnoTestApp.Shared.projitems*{db97379e-a31e-4663-99b2-1873b7102199}*SharedItemsImports = 4
 	EndGlobalSection
