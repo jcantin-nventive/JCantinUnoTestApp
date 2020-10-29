@@ -20,33 +20,6 @@ namespace UnoTestApp
 		public MainPage()
 		{
 			this.InitializeComponent();
-			Loaded += MainPage_Loaded;
-			Unloaded += MainPage_Unloaded;
 		}
-
-		private void MainPage_Unloaded(object sender, RoutedEventArgs e)
-		{
-			ListButton.Click -= ListButton_Click;
-			CloseButton.Click -= CloseButton_Click;
-		}
-
-		private void MainPage_Loaded(object sender, RoutedEventArgs e)
-		{
-			VisualStateManager.GoToState(this, "Map", useTransitions: false);
-
-			ListButton.Click += ListButton_Click;
-			CloseButton.Click += CloseButton_Click;
-		}
-
-		private void CloseButton_Click(object sender, RoutedEventArgs e)
-		{
-			VisualStateManager.GoToState(this, "Map", useTransitions: true);
-		}
-
-		private void ListButton_Click(object sender, RoutedEventArgs e)
-		{
-			VisualStateManager.GoToState(this, "Search", useTransitions: true);
-		}
-
 	}
 }
