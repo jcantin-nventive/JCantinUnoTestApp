@@ -12,12 +12,14 @@
 	  xmlns:not_ios="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	  mc:Ignorable="uloc xamarin ios android">
 
-	<Page.DataContext>
-		<local:MyDataContext />
-	</Page.DataContext>
-
-	<StackPanel>
-		<TextBox IsEnabled="{Binding IsTextBoxEnabled}"
-				 Margin="50"/>
-	</StackPanel>
+	<Border BorderBrush="Blue"
+			BorderThickness="5"
+			Background="White">
+		<Pivot Margin="50">
+			<Pivot.Items>
+				<PivotItem Header="Info"
+						   Foreground="Red" />
+			</Pivot.Items>
+		</Pivot>
+	</Border>
 </Page>
