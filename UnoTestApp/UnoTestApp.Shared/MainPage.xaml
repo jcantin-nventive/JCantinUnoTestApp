@@ -130,5 +130,6 @@
 		</Style>
 	</Page.Resources>
 
-	<ComboBox ItemsSource="abcdef" />
+	<ComboBox ItemsSource="abcdef"
+			  Margin="0,100,0,0"/>
 </Page>
