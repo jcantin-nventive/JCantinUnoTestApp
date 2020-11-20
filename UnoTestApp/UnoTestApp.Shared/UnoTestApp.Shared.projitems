@@ -23,6 +23,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)MyDataContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">

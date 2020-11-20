@@ -12,124 +12,23 @@
 	  xmlns:not_ios="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	  mc:Ignorable="uloc xamarin ios android">
 
-	<Page.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
 
-		<Color x:Key="PrimaryColor02">#FF000000</Color>
+		<TextBlock x:Name="txtCmdBarSize"
+				   Text="There should be a purple grid below"
+				   local:FrameworkElementActualSizeBehavior.EnableActualSizeBinding="True"/>
 
-		<SolidColorBrush x:Key="PrimaryColor02Brush"
-						 Color="{StaticResource PrimaryColor02}" />
-
-		<SolidColorBrush x:Key="OpacityColor02Brush"
-						 Color="{StaticResource PrimaryColor02}"
-						 Opacity="0.1" />
-
-		<Style x:Key="DefaultComboItemStyle"
-			   TargetType="ComboBoxItem">
-			<Setter Property="Background"
-					Value="Transparent" />
-			<Setter Property="TabNavigation"
-					Value="Local" />
-			<Setter Property="Padding"
-					Value="8,10" />
-			<Setter Property="HorizontalContentAlignment"
-					Value="Left" />
-			<Setter Property="HorizontalAlignment"
-					Value="Stretch" />
-			<Setter Property="UseSystemFocusVisuals"
-					Value="True" />
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="ComboBoxItem">
-						<Grid x:Name="LayoutRoot"
-							  Background="{TemplateBinding Background}"
-							  BorderBrush="{TemplateBinding BorderBrush}"
-							  BorderThickness="{TemplateBinding BorderThickness}"
-							  Control.IsTemplateFocusTarget="True">
-							<VisualStateManager.VisualStateGroups>
-								<VisualStateGroup x:Name="CommonStates">
-									<VisualState x:Name="Normal" />
-									<VisualState x:Name="PointerOver" />
-									<VisualState x:Name="Disabled" />
-									<VisualState x:Name="Pressed">
-										<Storyboard>
-											<DoubleAnimation Duration="0"
-															 To="0.5"
-															 Storyboard.TargetProperty="Opacity"
-															 Storyboard.TargetName="PressedBackground" />
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-																		   Storyboard.TargetName="ContentPresenter">
-												<DiscreteObjectKeyFrame KeyTime="0"
-																		Value="{StaticResource OpacityColor02Brush}" />
-											</ObjectAnimationUsingKeyFrames>
-										</Storyboard>
-									</VisualState>
-									<VisualState x:Name="Selected">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetName="LayoutRoot"
-																		   Storyboard.TargetProperty="Background">
-												<DiscreteObjectKeyFrame KeyTime="0"
-																		Value="{StaticResource PresenterOverlay}" />
-											</ObjectAnimationUsingKeyFrames>
-											<PointerUpThemeAnimation Storyboard.TargetName="LayoutRoot" />
-										</Storyboard>
-									</VisualState>
-									<VisualState x:Name="SelectedUnfocused">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetName="LayoutRoot"
-																		   Storyboard.TargetProperty="Background">
-												<DiscreteObjectKeyFrame KeyTime="0"
-																		Value="{StaticResource PresenterOverlay}" />
-											</ObjectAnimationUsingKeyFrames>
-										</Storyboard>
-									</VisualState>
-									<VisualState x:Name="SelectedDisabled">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
-																		   Storyboard.TargetProperty="Foreground">
-												<DiscreteObjectKeyFrame KeyTime="0"
-																		Value="{StaticResource OpacityColor02Brush}" />
-											</ObjectAnimationUsingKeyFrames>
-										</Storyboard>
-									</VisualState>
-									<VisualState x:Name="SelectedPointerOver">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetName="LayoutRoot"
-																		   Storyboard.TargetProperty="Background">
-												<DiscreteObjectKeyFrame KeyTime="0"
-																		Value="{StaticResource OpacityColor02Brush}" />
-											</ObjectAnimationUsingKeyFrames>
-											<PointerUpThemeAnimation Storyboard.TargetName="LayoutRoot" />
-										</Storyboard>
-									</VisualState>
-									<VisualState x:Name="SelectedPressed">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetName="LayoutRoot"
-																		   Storyboard.TargetProperty="Background">
-												<DiscreteObjectKeyFrame KeyTime="0"
-																		Value="{StaticResource OpacityColor02Brush}" />
-											</ObjectAnimationUsingKeyFrames>
-										</Storyboard>
-									</VisualState>
-								</VisualStateGroup>
-							</VisualStateManager.VisualStateGroups>
-							<Rectangle x:Name="PressedBackground"
-									   Fill="{StaticResource SecondaryColor02Brush}"
-									   Opacity="0" />
-							<ContentPresenter x:Name="ContentPresenter"
-											  Content="{TemplateBinding Content}"
-											  ContentTransitions="{TemplateBinding ContentTransitions}"
-											  ContentTemplate="{TemplateBinding ContentTemplate}"
-											  Foreground="{TemplateBinding Foreground}"
-											  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-											  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-											  Margin="{TemplateBinding Padding}" />
-						</Grid>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-	</Page.Resources>
-
-	<ComboBox ItemsSource="abcdef"
-			  Margin="0,100,0,0"/>
+		<ContentControl Grid.Row="1">
+			<ContentControl.ContentTemplate>
+				<DataTemplate>
+					<Grid Background="Purple"
+						  Height="{Binding ElementName=txtCmdBarSize, Path=(behaviors:FrameworkElementActualSizeBehavior.ActualHeight)}"/>
+				</DataTemplate>
+			</ContentControl.ContentTemplate>
+		</ContentControl>
+	</Grid>
 </Page>
