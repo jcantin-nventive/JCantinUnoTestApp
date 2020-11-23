@@ -2,6 +2,12 @@
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <ItemGroup>
+    <PackageReference Include="Chinook.StackNavigation">
+      <Version>0.2.0-dev.39</Version>
+    </PackageReference>
+    <PackageReference Include="Chinook.StackNavigation.Uno">
+      <Version>0.2.0-dev.39</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <!-- 
 			If, in the same solution, you are referencing a project that uses https://github.com/onovotny/MSBuildSdkExtras,

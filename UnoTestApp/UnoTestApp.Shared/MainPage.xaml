@@ -18,17 +18,11 @@
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
-		<TextBlock x:Name="txtCmdBarSize"
-				   Text="There should be a purple grid below"
-				   local:FrameworkElementActualSizeBehavior.EnableActualSizeBinding="True"/>
+		<CommandBar Background="Transparent"
+					Content="This is the command bar" />
 
-		<ContentControl Grid.Row="1">
-			<ContentControl.ContentTemplate>
-				<DataTemplate>
-					<Grid Background="Purple"
-						  Height="{Binding ElementName=txtCmdBarSize, Path=(local:FrameworkElementActualSizeBehavior.ActualHeight)}"/>
-				</DataTemplate>
-			</ContentControl.ContentTemplate>
-		</ContentControl>
+		<Button Grid.Row="1"
+				Content="Navigate to the child page."
+				Click="Button_Click" />
 	</Grid>
 </Page>

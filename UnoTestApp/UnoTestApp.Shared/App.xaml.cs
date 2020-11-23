@@ -1,6 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Chinook.StackNavigation;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,6 +26,8 @@ namespace UnoTestApp
 	/// </summary>
 	sealed partial class App : Application
 	{
+		public static IStackNavigator Navigator { get; private set; }
+
 		/// <summary>
 		/// Initializes the singleton application object.  This is the first line of authored code
 		/// executed, and as such is the logical equivalent of main() or WinMain().
@@ -80,6 +85,12 @@ namespace UnoTestApp
 				// Ensure the current window is active
 				Windows.UI.Xaml.Window.Current.Activate();
 			}
+
+			Navigator = new FrameStackNavigator(rootFrame, new ReadOnlyDictionary<Type, Type>(new Dictionary<Type, Type>
+			{
+				{ typeof(MainPageViewModel), typeof(MainPage) },
+				{ typeof(ChildPageViewModel), typeof(ChildPage) }
+			}));
 		}
 
 		/// <summary>

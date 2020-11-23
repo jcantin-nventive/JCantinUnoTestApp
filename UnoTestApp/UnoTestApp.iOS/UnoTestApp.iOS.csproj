@@ -115,6 +115,12 @@
     <BundleResource Include="Resources\Fonts\winjs-symbols.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Chinook.StackNavigation">
+      <Version>0.2.0-dev.39</Version>
+    </PackageReference>
+    <PackageReference Include="Chinook.StackNavigation.Uno">
+      <Version>0.2.0-dev.39</Version>
+    </PackageReference>
     <PackageReference Include="Uno.UI" Version="3.2.0-dev.347" />
     <PackageReference Include="Uno.UI.RemoteControl" Version="2.0.530" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
