@@ -26,7 +26,7 @@
 			<ContentControl.ContentTemplate>
 				<DataTemplate>
 					<Grid Background="Purple"
-						  Height="{Binding ElementName=txtCmdBarSize, Path=(behaviors:FrameworkElementActualSizeBehavior.ActualHeight)}"/>
+						  Height="{Binding ElementName=txtCmdBarSize, Path=(local:FrameworkElementActualSizeBehavior.ActualHeight)}"/>
 				</DataTemplate>
 			</ContentControl.ContentTemplate>
 		</ContentControl>
