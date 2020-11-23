@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
+using Chinook.StackNavigation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -29,6 +30,7 @@ namespace UnoTestApp
 		private async void Button_Click(object sender, RoutedEventArgs e)
 		{
 			await App.Navigator.NavigateBack(CancellationToken.None);
+			//await App.Navigator.Navigate(CancellationToken.None, StackNavigatorRequest.GetNavigateRequest(() => new MainPageViewModel()));
 		}
 	}
 }
