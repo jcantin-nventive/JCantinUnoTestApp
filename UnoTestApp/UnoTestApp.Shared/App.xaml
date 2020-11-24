@@ -1,7 +1,25 @@
-﻿<Application
-    x:Class="UnoTestApp.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UnoTestApp">
+﻿<Application x:Class="UnoTestApp.App"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:ios="http://uno.ui/ios"
+			 xmlns:local="using:UnoTestApp"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 mc:Ignorable="ios">
+
+	<Application.Resources>
+		<ios:Style x:Key="NativeDefaultFrame"
+				   TargetType="Frame">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Frame">
+						<NativeFramePresenter Background="{TemplateBinding Background}" />
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</ios:Style>
+
+		<ios:Style TargetType="Frame"
+				   BasedOn="{StaticResource NativeDefaultFrame}" />
+	</Application.Resources>
 
 </Application>

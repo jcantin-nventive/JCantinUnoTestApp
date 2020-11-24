@@ -7,6 +7,8 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
+using Uno.Extensions;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -73,6 +75,12 @@ namespace UnoTestApp
 				Windows.UI.Xaml.Window.Current.Content = rootFrame;
 			}
 
+			Navigator = new FrameStackNavigator(rootFrame, new ReadOnlyDictionary<Type, Type>(new Dictionary<Type, Type>
+			{
+				{ typeof(MainPageViewModel), typeof(MainPage) },
+				{ typeof(ChildPageViewModel), typeof(ChildPage) }
+			}));
+
 			if (e.PrelaunchActivated == false)
 			{
 				if (rootFrame.Content == null)
@@ -80,17 +88,11 @@ namespace UnoTestApp
 					// When the navigation stack isn't restored navigate to the first page,
 					// configuring the new page by passing required information as a navigation
 					// parameter
-					rootFrame.Navigate(typeof(MainPage), e.Arguments);
+					_ = Navigator.Navigate(CancellationToken.None, StackNavigatorRequest.GetNavigateRequest(() => new MainPageViewModel()));
 				}
 				// Ensure the current window is active
 				Windows.UI.Xaml.Window.Current.Activate();
 			}
-
-			Navigator = new FrameStackNavigator(rootFrame, new ReadOnlyDictionary<Type, Type>(new Dictionary<Type, Type>
-			{
-				{ typeof(MainPageViewModel), typeof(MainPage) },
-				{ typeof(ChildPageViewModel), typeof(ChildPage) }
-			}));
 		}
 
 		/// <summary>
