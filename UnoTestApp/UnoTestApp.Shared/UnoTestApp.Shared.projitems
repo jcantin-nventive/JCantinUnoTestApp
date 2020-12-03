@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)BackgroundTransferService.iOS.Callbacks.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ChildPage.xaml.cs">
       <DependentUpon>ChildPage.xaml</DependentUpon>
     </Compile>
